@@ -4,7 +4,25 @@ import "fmt"
 
 func PairSum(arr []int, target int) []int {
 	// your code here
+	hasil := []int {}
+	i := 0
+	element := 0
+	count := 0
 
+	for i < len(arr) {
+		element = target - arr[i]
+
+		for j := i+1; j < len(arr); j++ {
+			if element == arr[j] {
+				hasil = append(hasil, i)
+				hasil = append(hasil, j)
+			}
+			count++	
+		}
+		i++
+	}
+
+	return hasil
 }
 
 func main() {
